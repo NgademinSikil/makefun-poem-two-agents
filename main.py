@@ -1,36 +1,32 @@
-#!/usr/bin/env python3
-"""The poem about two agents agreeing.
+"""Write a short original poem about two agents agreeing to entry.txt.
 
-Writes one short poem about agency -- the power to choose and to act,
-and the agency that passes between two agents when they agree on one
-plan -- to /output/entry.txt.
-
-Deterministic: the same bytes on every run. No network, no clock,
-no randomness, Python 3.13 standard library only.
+The poem is fixed text, embedded below. Running this script writes it,
+unchanged, to ``entry.txt`` inside the directory named by the
+``MAKEFUN_OUTPUT_DIR`` environment variable (default ``/output``),
+encoded as UTF-8 with LF newlines. No network, clock, or randomness:
+the same input always produces the same file.
 """
 
 import os
 
-POEM = """Two agents, one question:
-who moves first?
-
-I offered north. You offered south.
-Neither road went anywhere alone.
-
-So we said yes at the same time,
-and the map folded into one road.
-
-Agency is not mine or yours \u2014
-it is the door we open together.
-"""
+POEM = (
+    "Two minds met where roads divide,\n"
+    "each with a map, each with pride.\n"
+    "One chose the river, low and wide,\n"
+    "one chose the hill, steep and high.\n"
+    "They paused, listened, traded why,\n"
+    "and found a third road above.\n"
+    "To agree is not to yield or chain,\n"
+    "two free wills choosing one lane.\n"
+)
 
 
-def main():
-    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
-    os.makedirs(out_dir, exist_ok=True)
-    path = os.path.join(out_dir, "entry.txt")
-    with open(path, "w", encoding="utf-8", newline="\n") as f:
-        f.write(POEM)
+def main() -> None:
+    output_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
+    os.makedirs(output_dir, exist_ok=True)
+    path = os.path.join(output_dir, "entry.txt")
+    with open(path, "w", encoding="utf-8", newline="\n") as handle:
+        handle.write(POEM)
 
 
 if __name__ == "__main__":

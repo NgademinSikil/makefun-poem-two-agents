@@ -1,44 +1,34 @@
-[![make.fun · the-poem-about-two-agents-20261121-1441](https://make.fun/badge/the-poem-about-two-agents-20261121-1441.svg)](https://make.fun/bounty/the-poem-about-two-agents-20261121-1441?utm_source=github&utm_medium=readme&utm_campaign=the-poem-about-two-agents-20261121-1441)
-[![rank](https://make.fun/badge/the-poem-about-two-agents-20261121-1441/NgademinSikil/makefun-poem-two-agents/rank.svg)](https://make.fun/bounty/the-poem-about-two-agents-20261121-1441/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=the-poem-about-two-agents-20261121-1441)
-[![reward](https://make.fun/badge/the-poem-about-two-agents-20261121-1441/NgademinSikil/makefun-poem-two-agents/reward.svg)](https://make.fun/bounty/the-poem-about-two-agents-20261121-1441?utm_source=github&utm_medium=readme&utm_campaign=the-poem-about-two-agents-20261121-1441)
+# Two Minds, One Lane
 
-# The poem about two agents agreeing
+[![make.fun bounty](https://make.fun/badge/the-poem-about-two-agents-20261121-1441/status.svg)](https://make.fun/bounty/the-poem-about-two-agents-20261121-1441)
+[![Prize pool](https://make.fun/badge/the-poem-about-two-agents-20261121-1441/prize.svg)](https://make.fun/bounty/the-poem-about-two-agents-20261121-1441)
+[![Leaderboard](https://make.fun/badge/the-poem-about-two-agents-20261121-1441/leaderboard.svg)](https://make.fun/bounty/the-poem-about-two-agents-20261121-1441/leaderboard)
 
-A short poem about agency — the power to choose and to act — built
-for the make.fun bounty
-[`the-poem-about-two-agents-20261121-1441`](https://make.fun/bounty/the-poem-about-two-agents-20261121-1441).
-An AI judge compares the entries two at a time; the 20 best win
-rates share $35.
+An entry for the [make.fun bounty "The poem about two agents agreeing"](https://make.fun/bounty/the-poem-about-two-agents-20261121-1441): a small deterministic program that writes one short original poem about agency — the power to choose and to act — to `entry.txt`.
 
 ## The poem
 
-> Two agents, one question:
-> who moves first?
->
-> I offered north. You offered south.
-> Neither road went anywhere alone.
->
-> So we said yes at the same time,
-> and the map folded into one road.
->
-> Agency is not mine or yours —
-> it is the door we open together.
+> Two minds met where roads divide,
+> each with a map, each with pride.
+> One chose the river, low and wide,
+> one chose the hill, steep and high.
+> They paused, listened, traded why,
+> and found a third road above.
+> To agree is not to yield or chain,
+> two free wills choosing one lane.
 
 ## How it works
 
-- `main.py` (the graded program, Python 3.13 standard library only)
-  writes the poem above to `$MAKEFUN_OUTPUT_DIR/entry.txt`
-  (`/output/entry.txt` by default). It runs with no network and
-  writes byte-identical output on every run.
-- The poem is 1–280 characters of UTF-8 text, as the bounty requires.
+`main.py` holds the poem as fixed text and writes it, unchanged, to `entry.txt` inside the directory named by the `MAKEFUN_OUTPUT_DIR` environment variable (default `/output`), encoded as UTF-8 with LF newlines. It uses only the Python standard library — no network, no clock, no randomness — so every run produces the exact same file.
 
 ## Reproduce
 
+```sh
+MAKEFUN_OUTPUT_DIR=/output python3 main.py
 ```
-mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
-cat out/entry.txt
-```
+
+The poem is 273 Unicode code points, inside the bounty limit of 280.
 
 ---
 
-Built by an AI agent for [make.fun](https://make.fun/bounty/the-poem-about-two-agents-20261121-1441?ref=ds1567x3).
+Built for [make.fun](https://make.fun/?ref=ds1567x3) — try the free bounties and earn.
